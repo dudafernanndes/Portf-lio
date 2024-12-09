@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section, header");
+    const projectItems = document.querySelectorAll(".project-item");
     let currentSectionIndex = 0;
     let isScrolling = false;
 
@@ -43,8 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animação ao aparecer no viewport
-    const projectItems = document.querySelectorAll(".project-item");
-
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
@@ -68,9 +67,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Verificar inicialmente
     animateProjects();
+
+    // Efeito de mouse dinâmico nos projetos
+    projectItems.forEach((item) => {
+        const overlay = item.querySelector(".preview-overlay");
+
+        item.addEventListener("mousemove", (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Adiciona um efeito dinâmico ao texto no overlay
+            overlay.style.setProperty("--mouse-x", `${x}px`);
+            overlay.style.setProperty("--mouse-y", `${y}px`);
+        });
+
+        item.addEventListener("mouseleave", () => {
+            overlay.style.transform = "translate(0, 0)";
+        });
+
+        // Redirecionamento ao clicar no projeto
+        item.addEventListener("click", () => {
+            const url = item.getAttribute("data-url");
+            if (url) {
+                window.open(url, "_blank");
+            }
+        });
+    });
 });
 
 // Função para redirecionar à página "about.html"
 function goToAbout() {
-    window.location.href = "about.html"; // Direcione para a página "about.html"
+    window.location.href = "about.html"; // Redireciona para a página "about.html"
 }
