@@ -41,4 +41,36 @@ document.addEventListener("DOMContentLoaded", () => {
             currentSectionIndex = Array.from(sections).indexOf(targetSection);
         });
     });
+
+    // Animação ao aparecer no viewport
+    const projectItems = document.querySelectorAll(".project-item");
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function animateProjects() {
+        projectItems.forEach((item) => {
+            if (isInViewport(item)) {
+                item.classList.add("animate");
+            }
+        });
+    }
+
+    // Verificar animações no scroll
+    window.addEventListener("scroll", animateProjects);
+
+    // Verificar inicialmente
+    animateProjects();
 });
+
+// Função para redirecionar à página "about.html"
+function goToAbout() {
+    window.location.href = "about.html"; // Direcione para a página "about.html"
+}
