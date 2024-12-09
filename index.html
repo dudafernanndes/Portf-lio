@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Estilos e Fontes -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="hero-section" id="home">
+        <!-- Barra de Navegação -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Letreiro e Planeta -->
+        <div class="hero-overlay">
+            <!-- Localização e ícone do planeta -->
+            <div class="location-badge">
+                <span class="icon"></span> <!-- Planeta animado -->
+                <p>Localizado em [Sua localização]</p>
+            </div>
+
+            <!-- Texto central -->
+            <div class="text-content">
+                <div class="marquee-container">
+                    <div class="marquee">
+                        <h1>Seu nome</h1>
+                        <h1>Seu nome</h1>
+                        <h1>Seu nome</h1>
+                    </div>
+                </div>
+                <p class="subtitle">Freelance Designer & Developer</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <!-- Texto sobre mim -->
+            <div class="about-left">
+                <h2>Ajudando marcas a se destacarem na era digital.</h2>
+                <p>Juntos definiremos o novo status quo. Sem bobagens, sempre na vanguarda.</p>
+            </div>
+            <!-- Botão para detalhes -->
+            <div class="about-right">
+                <p>A combinação da minha paixão por design, código e interação me posiciona em um lugar único no mundo do web design.</p>
+                <button class="about-button" onclick="goToAbout()">Sobre mim</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section class="projects-section" id="projects">
+        <div class="projects-content">
+            <h2>Meus Projetos</h2>
+            <div class="projects-grid">
+                <!-- Projeto 1 -->
+                <div class="project-item" onclick="window.open('https://example.com/project1', '_blank')">
+                    <div class="project-preview">
+                        <img src="img/Projeto1.png" alt="Projeto 1 Preview">
+                        <div class="preview-overlay">
+                            <p>The best stories deserve to be told.</p>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Projeto 1</h3>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="project-item" onclick="window.open('https://example.com/project2', '_blank')">
+                    <div class="project-preview">
+                        <img src="img/Projeto2.png" alt="Projeto 2 Preview">
+                        <div class="preview-overlay">
+                            <p>Interaction & Development</p>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Projeto 2</h3>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="project-item" onclick="window.open('https://example.com/project3', '_blank')">
+                    <div class="project-preview">
+                        <img src="img/Projeto3.png" alt="Projeto 3 Preview">
+                        <div class="preview-overlay">
+                            <p>Design & Development</p>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Projeto 3</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
